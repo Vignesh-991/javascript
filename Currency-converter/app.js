@@ -42,9 +42,6 @@ const updateExchangeRate = async () => {
         amtVal = 1;
         amount.value = "1";
     }
-window.addEventListener("load", () => {
-    updateExchangeRate();
-});
     let URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}.json`;//`${BASE_URL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`;
     let response = await fetch(URL);
     //console.log(response);

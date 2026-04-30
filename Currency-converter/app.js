@@ -34,9 +34,7 @@ btn.addEventListener("click", (evt) => {
     evt.preventDefault();
     updateExchangeRate();
 });
-window.addEventListener("load", () => {
-    updateExchangeRate();
-});
+
 const updateExchangeRate = async () => {
     let amount = document.querySelector(".amount input");
     let amtVal = amount.value;
@@ -44,7 +42,9 @@ const updateExchangeRate = async () => {
         amtVal = 1;
         amount.value = "1";
     }
-
+window.addEventListener("load", () => {
+    updateExchangeRate();
+});
     let URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}.json`;//`${BASE_URL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`;
     let response = await fetch(URL);
     //console.log(response);

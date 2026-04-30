@@ -34,7 +34,9 @@ btn.addEventListener("click", (evt) => {
     evt.preventDefault();
     updateExchangeRate();
 });
-
+window.addEventListener("load", () => {
+    updateExchangeRate();
+});
 const updateExchangeRate = async () => {
     let amount = document.querySelector(".amount input");
     let amtVal = amount.value;
